@@ -1,0 +1,13 @@
+{
+  "uploadOnSave": true,
+  "hostname": "52.27.133.219",
+  "port": "22",
+  "target": "/home/michael/website/",
+  "ignore": [
+    ".git/**",
+    ".DS_Store"
+  ],
+  "username": "michael",
+  "keyfile": "/users/theloneplant/.ssh/mysite.pem",
+  "transport": "scp"
+}
