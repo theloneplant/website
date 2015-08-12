@@ -1,10 +1,26 @@
 html
-    head
-        title ML
-        link(rel="stylesheet" type="text/css" href="/css/style.css")
-        script(src="/js/main.js")
-    body
-        #header
-        #main_view
-            h3 Ryan the slurpee butt
-        #footer
+	head
+		title Michael LaPlante
+		link(href="http://fonts.googleapis.com/css?family=Oxygen:300,700,400" rel="stylesheet" type="text/css")
+		link(rel="stylesheet" type="text/css" href="/css/style.css")
+
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(src="/js/main.js")
+	body
+		canvas#main_background
+		#header
+			.content_wrapper
+				a#header_logo(href="/") M.L.
+				ul#nav_bar
+					a(href="/")
+						li#nav_item1.nav_item Home
+					a(href="/")
+						li#nav_item2.nav_item Projects
+					a(href="/")
+						li#nav_item3.nav_item More
+		#main_view
+			.content_wrapper
+				#stuff(style="height: 500px; background-color: #DBDBDB;")
+					h3 Constitute the constapational reality of our existence and transcend
+		#footer
+			.content_wrapper footer
