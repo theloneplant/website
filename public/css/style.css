@@ -12,6 +12,24 @@ a {
 	color: #6D6BD2;
 }
 
+h1 {
+	font-weight: 300;
+	font-size: 72px;
+	margin: 0 0;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 40px;
+	margin: 0 0;
+}
+
+h3 {
+	font-weight: 300;
+	font-size: 30px;
+	margin: 0 0;
+}
+
 #main_background {
 	position: fixed;
 	display: block;
@@ -166,7 +184,17 @@ a {
 	height: 2000px;
 }
 
+#panel_1 {
+	position: relative;
+	width: 100%;
+	margin-top: 250px;
+	text-align: center;
+	color: #FFF;
+}
+
 #footer {
 	position: relative;
 	display: block;
+	height: 300px;
+	background-color: #FFF;
 }

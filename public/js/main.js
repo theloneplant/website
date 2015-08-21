@@ -7,7 +7,7 @@
 		var prevScroll = $(this).scrollTop();
 		$(window).scroll(function(event) {
 			var scrollTop = $(this).scrollTop();
-			if (scrollTop > 65) {
+			if (scrollTop > 0) {
 				hitTop = false;
 				if (scrollTop > prevScroll) {
 					$('#header').css({

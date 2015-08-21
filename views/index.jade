@@ -6,9 +6,14 @@ html
 		link(rel="stylesheet" type="text/css" href="/css/media.css")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
-		script(src="/js/main.js")
-		script(src="/js/gl.js")
+		script(src="/js/stats.js")
 		script(src="/js/three.min.js")
+
+		each shader in shaders
+			!= shader
+
+		script(src="/js/gl.js")
+		script(src="/js/main.js")
 	body
 		canvas#main_background
 		#header_block
@@ -19,12 +24,14 @@ html
 					a(href="/")
 						li#nav_item1.nav_item Home
 					a(href="/")
-						li#nav_item2.nav_item Projects
+						li#nav_item2.nav_item Lab
 					a(href="/")
 						li#nav_item3.nav_item More
 		#main_view
 			.content_wrapper
-				//#stuff(style="height: 500px; background-color: #DBDBDB;")
-				h3 Constitute the constapational reality of our existence and transcend
+				#panel_1
+					h2 lorem ipsum
+					h1 Dolor Sit Amet
+					h2(style="position: relative; margin-top: 40px;") consectetur adipiscing elit
 		#footer
 			.content_wrapper footer
