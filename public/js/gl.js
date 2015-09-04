@@ -160,7 +160,7 @@ var Background3D = function(container) {
 			uniforms: {
 				mousePosition: {
 					type: 'v2',
-					value: new THREE.Vector2(originalWidth / 2, originalHeight / 2)
+					value: new THREE.Vector2(originalWidth * 1000, originalHeight * 1000)
 				},
 				color: {
 					type: 'c',
@@ -177,9 +177,33 @@ var Background3D = function(container) {
 			wireframe: true, 
 			transparent: true
 		});
-		$(window).on('mousemove', function(event) {
-			wireframe.uniforms.mousePosition.value = new THREE.Vector2(event.pageX, -(event.pageY - $(window).scrollTop() - height));
+		var flashlight = false;
+		$(document).on('mousedown', function(event) {
+			if (flashlight) {
+				flashlight = false;
+				moveCursorAway();
+			}
+			else {
+				flashlight = true;
+				updateCursor();
+			}
 		});
+		$(window).on('mousemove', function(event) {
+			if (flashlight) {
+				updateCursor();
+			}
+		});
+		$(window).on('mouseout', function(event) {
+			moveCursorAway();
+		});
+
+		function updateCursor() {
+			wireframe.uniforms.mousePosition.value = new THREE.Vector2(event.pageX, -(event.pageY - $(window).scrollTop() - height));
+		}
+
+		function moveCursorAway() {
+			wireframe.uniforms.mousePosition.value = new THREE.Vector2(originalWidth * 1000, originalHeight * 1000);
+		}
 
 		// How many cells there are on each axis
 		var cellsX = Math.floor((originalWidth + 4 * cellSize) / cellSize);

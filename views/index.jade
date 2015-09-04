@@ -6,32 +6,41 @@ html
 		link(rel="stylesheet" type="text/css" href="/css/media.css")
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.2.0/trianglify.min.js")
 		script(src="/js/stats.js")
 		script(src="/js/three.min.js")
 
-		each shader in shaders
+		//each shader in shaders
 			!= shader
 
 		script(src="/js/gl.js")
 		script(src="/js/main.js")
 	body
-		canvas#main_background
 		#header_block
 		#header
-			.content_wrapper
-				a#header_logo(href="/") M.L.
-				ul#nav_bar
-					a(href="/")
-						li#nav_item1.nav_item Home
-					a(href="/")
-						li#nav_item2.nav_item Lab
-					a(href="/")
-						li#nav_item3.nav_item More
-		#main_view
-			.content_wrapper
-				#panel_1
-					h2 lorem ipsum
-					h1 Dolor Sit Amet
-					h2(style="position: relative; margin-top: 40px;") consectetur adipiscing elit
-		#footer
-			.content_wrapper footer
+			#nav.content_wrapper.no_select
+				#nav_slider
+				#nav_logo ML
+				#nav_divider
+				#nav_skills.nav_link Skills
+				#nav_lab.nav_link Lab
+				#nav_photo.nav_link Photo
+				#nav_contact.nav_link Contact
+		#intro_wrapper
+			canvas#intro_canvas
+			#intro
+				h4#intro_message_1 My name is
+				h1#intro_message_2 Michael LaPlante
+				h4#intro_message_3 I am a front end software engineer from California and I love creating engaging interactive experiences
+		#skills_wrapper
+			#skills
+				div Skills
+		#lab_wrapper
+			#lab
+				div Lab
+		#photo_wrapper
+			#photo
+				div Photo
+		#contact_wrapper
+			#contact
+				div Contact
