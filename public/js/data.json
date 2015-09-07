@@ -35,40 +35,77 @@
 	],
 	"more": [
 		{
-			"name": "Oculus Rift",
-			"priority": 1
+			"name": "Oculus Rift"
 		},
 		{
-			"name": "GitHub",
-			"priority": 1
+			"name": "GitHub"
 		},
 		{
-			"name": "Jira",
-			"priority": 1
+			"name": "Jira"
 		},
 		{
-			"name": "Agile Development",
-			"priority": 1
+			"name": "Agile Development"
 		},
 		{
-			"name": "GLSL",
-			"priority": 2
+			"name": "GLSL"
 		},
 		{
-			"name": "Terminal",
-			"priority": 2
+			"name": "Terminal"
 		},
 		{
-			"name": "three.js",
-			"priority": 2
+			"name": "three.js"
 		},
 		{
-			"name": "Unreal Engine 4",
-			"priority": 2
+			"name": "Unreal Engine 4"
 		},
 		{
-			"name": "Adobe Suite",
-			"priority": 3
+			"name": "Adobe Suite"
+		}
+	],
+	"projects": [
+		{
+			"name": "Generic Quest",
+			"year": "2013",
+			"desc": "description here",
+			"linkDesc": "View Project on GitHub",
+			"href": "https://github.com/theloneplant/GenericQuest",
+			"image": "../public/assets/images/gq.jpg",
+			"tags": [
+				{
+					"name": "C++"
+				},
+				{
+					"name": "Visual Studio"
+				},
+				{
+					"name": "Animation"
+				},
+				{
+					"name": "Stats"
+				}
+			]
+		},
+		{
+			"name": "Generic Derp",
+			"year": "2013",
+			"desc": "description here",
+			"linkDesc": "View Project on GitHub",
+			"href": "https://github.com/theloneplant/GenericQuest",
+			"image": "../public/assets/images/gq.jpg",
+			"tags": [
+				{
+					"name": "C++"
+				},
+				{
+					"name": "C#"
+				},
+				{
+					"name": "Animation"
+				},
+				{
+					"name": "Stats"
+				}
+			]
 		}
 	]
 }

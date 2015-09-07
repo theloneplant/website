@@ -48,13 +48,43 @@ html
 									h4= skill.name
 					#skills_bars
 						ul
-							each bar in data.skills
+							each bar, index in data.skills
+								-var tagString = "";
 								li(style="width: " + bar.level + "%;")
 									.skills_bar
+										each project in data.projects
+											each tag in project.tags
+												if tag.name === data.skills[index].name
+													if (tagString == "")
+														-tagString = project.name;
+													else
+														-tagString += ", " + project.name;
+										h5.skills_tags=tagString
+
 				h2 More
+				#skills_more
+					ul
+						each skill in data.more
+							li
+								h5.skills_minor=skill.name
+
 		#lab_wrapper
 			#lab
-				p Lab
+				#lab_nav
+				#lab_nav_mobile
+				#lab_slider
+					each project in data.projects
+						.lab_project
+							.lab_image
+							.lab_info
+								h3=project.name
+								.lab_divider
+								.lab_tags
+									each tag in project.tags
+										.lab_tag=tag.name
+								p=project.desc
+								a(href=project.href).lab_link=project.linkDesc
+
 		#photo_wrapper
 			#photo
 				p Photo

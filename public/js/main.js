@@ -10,6 +10,7 @@
 		}
 
 		window.onresize = function() {
+			updateNavHeight();
 			updateNavSlider();
 		}
 
@@ -23,14 +24,23 @@
 		var contact = document.getElementById('nav_contact');
 		var offsetX, introOffset, skillsOffset, labOffset, photoOffset, contactOffset;
 
+		function updateNavHeight() {
+			if (window.innerWidth <= 450) {
+				navHeight = 60;
+			}
+			else {
+				navHeight = 70;
+			}
+		}
+
 		function updateNavSlider() {
 			var scroll = $(document).scrollTop();
 			offsetX = intro.getBoundingClientRect().left;
 			introOffset = 0;
-			skillsOffset = $('#skills_wrapper').offset().top - 70;
-			labOffset = $('#lab_wrapper').offset().top - 70;
-			photoOffset = $('#photo_wrapper').offset().top - 70;
-			contactOffset = Math.min($('#contact_wrapper').offset().top - 70, $(document).height() - window.innerHeight);
+			skillsOffset = $('#skills_wrapper').offset().top - navHeight;
+			labOffset = $('#lab_wrapper').offset().top - navHeight;
+			photoOffset = $('#photo_wrapper').offset().top - navHeight;
+			contactOffset = Math.min($('#contact_wrapper').offset().top - navHeight, $(document).height() - window.innerHeight);
 
 			// Determine where the bar should be and interpolate its position between sections
 			if (scroll >= introOffset && scroll < skillsOffset) {
@@ -84,7 +94,7 @@
 
 		function scrollToPosition(offset) {
 			var delta = Math.abs($(document).scrollTop() - offset);
-			var duration = 300 + delta / 7; // Scale the duration depending on distance
+			var duration = 500 + delta / 6; // Scale the duration depending on distance
 			$('html, body').stop().animate({ scrollTop: offset + 'px' }, duration);
 		}
 
@@ -112,19 +122,27 @@
 
 		function updateSkills() {
 			var scroll = $(document).scrollTop();
+			var skillsHeight = labOffset - skillsOffset;
 			var skills = $('#skills_bars ul');
+			var more = $('#skills_more ul');
 			
-			if (!skillsToggled && scroll >= skillsOffset - 200) {
+			if (!skillsToggled && scroll >= skillsOffset - 250 
+				&& scroll <= skillsOffset + skillsHeight - 250) {
 				for (var i = 0; i < skills[0].children.length; i++) {
 					var current = skills[0].children[i].children[0];
-					console.log(current);
-					pauseAndShow(current, i * 200);
+					timeoutSkillsBars(current, i * 100);
 				}
+				for (var i = 0; i < more[0].children.length; i++) {
+					var current = more[0].children[i].children[0];
+					console.log(current);
+					timeoutSkillsMore(current, i * 50 + skills[0].children.length * 100 + 400);
+				}
+
 				skillsToggled = true;
 			}
 		}
 
-		function pauseAndShow(element, time) {
+		function timeoutSkillsBars(element, time) {
 			setTimeout(function() {
 				$(element).css({
 					'-webkit-transform': 'translateX(0%)',
@@ -136,8 +154,17 @@
 			}, time);
 		}
 
+		function timeoutSkillsMore(element, time) {
+			setTimeout(function() {
+				$(element).css({
+					'opacity': '1'
+				});
+			}, time);
+		}
+
 		// Initialize everything, making sure the dom is fully updated with queries
 		setTimeout(function() {
+			updateNavHeight();
 			updateNavSlider(); 
 			updateSkills();
 		}, 50)
