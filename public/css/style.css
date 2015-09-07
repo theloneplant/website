@@ -28,28 +28,37 @@ h1 {
 	font-weight: 400;
 	font-size: 90px;
 	margin: 0 0;
+	color: #3e4245;
 }
 
 h2 {
 	font-weight: 400;
-	font-size: 40px;
+	font-size: 48px;
 	margin: 0 0;
+	color: #3e4245;
 }
 
 h3 {
 	font-weight: 400;
 	font-size: 30px;
 	margin: 0 0;
+	color: #3e4245;
 }
 
 h4 {
 	font-weight: 400;
-	font-size: 36px;
+	font-size: 24px;
 	margin: 0 0;
+	color: #3e4245;
+}
+
+p {
+	font-size: 18px;
+	margin: 0px;
+	color: #3e4245;
 }
 
 /*----------GENERAL----------*/
-
 	.content_wrapper {
 		display: block;
 		position: relative;
@@ -73,6 +82,10 @@ h4 {
 		user-select: none;
 	}
 
+	.zero_width {
+		width: 0.00001px !important;
+	}
+
 /*----------HEADER----------*/
 
 	#header {
@@ -83,6 +96,9 @@ h4 {
 		width: 100%;
 		height: 70px;
 		background-color: #121212;
+		color: #FFFFFF;
+		white-space: nowrap;
+		overflow: hidden;
 		z-index: 10;
 	}
 
@@ -92,19 +108,17 @@ h4 {
 		top: 0px;
 		left: 0px;
 		width: 100%;
-		height: 70px;
+		height: 69px;
 	}
 
-	/*Change to centered at 676px*/
 	#nav {
-		display: block;
+		display: inline-block;
 		position: relative;
 		top: 0px;
 		left: 0px;
 		width: auto;
 		height: 70px;
 		color: #FFFFFF;
-		/*Change to calculate width in JS?*/
 		margin-left: 18.3%;
 	}
 
@@ -158,7 +172,7 @@ h4 {
 		display: block;
 		position: relative;
 		width: 100%;
-		min-height: 700px;
+		min-height: 500px;
 		overflow: hidden;
 	}
 
@@ -181,22 +195,26 @@ h4 {
 		display: block;
 		position: relative;
 		max-width: 700px;
-		margin-left: calc(18.3% + 85px);
+		margin-left: calc(18.3% + 75px);
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	#intro_message_1 {
 		margin-left: 5px;
 		margin-top: 180px;
+		color: #121212;
 	}
 
 	#intro_message_2 {
-		
+		color: #121212;
 	}
 
 	#intro_message_3 {
 		margin-left: 5px;
 		margin-top: 60px;
 		margin-bottom: 180px;
+		color: #121212;
 	}
 
 /*----------SKILLS----------*/
@@ -205,8 +223,93 @@ h4 {
 		display: block;
 		position: relative;
 		width: 100%;
-		min-height: 1000px;
 		background-color: #FFF;
+		z-index: 0;
+		overflow: hidden;
+	}
+
+	#skills_wrapper:before {
+		content: "";
+		display: block;
+		position: absolute;
+		background-color: #DDDDDD;
+		width: 5000%;
+		height: 100%;
+		left: 40%;
+		z-index: -1;
+		-webkit-transform: skewX(-30deg);
+		-moz-transform: skewX(-30deg);
+		-ms-transform: skewX(-30deg);
+		-o-transform: skewX(-30deg);
+		transform: skewX(-30deg);
+	}
+
+	#skills {
+		display: block;
+		margin-top: 40px;
+		margin-left: calc(18.3% - 25px);
+		overflow: hidden;
+		z-index: 0;
+	}
+
+	#skills_table {
+		display: inline-block;
+		width: 100%;
+	}
+
+	#skills_names {
+		display: block;
+		width: auto;
+		vertical-align: top;
+		margin-right: 20px;
+		float: left;
+	}
+
+	#skills_names ul {
+		list-style-type: none;
+		text-align: right;
+		padding: 0px;
+	}
+
+	#skills_names ul li {
+		line-height: 35px;
+		margin-bottom: 17px;
+	}
+
+	#skills_bars {
+		display: block;
+		vertical-align: top;
+		overflow: auto;
+		margin-right: 10%;
+		
+	}
+
+	#skills_bars ul {
+		list-style-type: none;
+		padding: 0px;
+	}
+
+	#skills_bars ul li {
+		max-width: 1000px;
+		width: 100%;
+		height: 35px;
+		margin-bottom: 17px;
+	}
+
+	.skills_bar {
+		display: block;
+		width: 100%;
+		height: 35px;
+		background-color: #35a6ff;
+		-webkit-transform: translateX(-101%);
+		-moz-transform: translateX(-101%);
+		-o-transform: translateX(-101%);
+		transform: translateX(-101%);
+
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+		-moz-transition: -moz-transform 1s ease-in-out;
+		-o-transition: -o-transform 1s ease-in-out;
+		transition: transform 1s ease-in-out;
 	}
 
 /*----------LAB----------*/
@@ -240,6 +343,86 @@ h4 {
 	}
 
 /*----------MEDIA----------*/
+	@media screen and (max-width: 740px) {
+		#intro {
+			max-width: 400px;
+		}
+
+		#intro_message_1 {
+			margin-top: 80px;
+		}
+
+		#intro_message_3 {
+			margin-bottom: 120px;
+		}
+	}
+
+	/*Small Screens*/
+	@media screen and (max-width: 450px) {
+		h1 {
+			font-size: 60px;
+		}
+
+		h2 {
+			font-size: 32px;
+		}
+
+		h3 {
+			font-size: 24px;
+		}
+
+		h4 {
+			font-size: 18px;
+		}
+
+		#nav_divider {
+			display: none;
+		}
+
+		#nav_logo {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		.nav_link {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		.nav_link {
+			font-size: 18px;
+		}
+
+		#intro {
+			max-width: 300px;
+		}
+
+		#skills {
+			margin-left: 5%;
+		}
+	}
+
+	/*Tiny Screens*/
+	@media screen and (max-width: 350px) {
+		#nav_logo {
+			font-size: 30px;
+		}
+		.nav_link {
+			font-size: 16px;
+		}
+	}
+
+	/*Centering Queries*/
+	@media screen and (max-width: 685px) {
+		#nav {
+			margin-left: 0px;
+		}
+
+		#header {
+			text-align: center;
+		}
+	}
+
 	@media screen and (max-width: 1390px) {
 		#intro {
 			margin: 0 auto;

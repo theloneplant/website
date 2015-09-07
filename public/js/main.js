@@ -6,6 +6,11 @@
 		// -----------------GENERAL-----------------
 		document.onscroll = function() {
 			updateNavSlider();
+			updateSkills();
+		}
+
+		window.onresize = function() {
+			updateNavSlider();
 		}
 
 		// -----------------HEADER-----------------
@@ -22,11 +27,12 @@
 			var scroll = $(document).scrollTop();
 			offsetX = intro.getBoundingClientRect().left;
 			introOffset = 0;
-			skillsOffset = $('#skills').offset().top - 70;
-			labOffset = $('#lab').offset().top - 70;
-			photoOffset = $('#photo').offset().top - 70;
-			contactOffset = Math.min($('#contact').offset().top - 70, $(document).height() - window.innerHeight);
+			skillsOffset = $('#skills_wrapper').offset().top - 70;
+			labOffset = $('#lab_wrapper').offset().top - 70;
+			photoOffset = $('#photo_wrapper').offset().top - 70;
+			contactOffset = Math.min($('#contact_wrapper').offset().top - 70, $(document).height() - window.innerHeight);
 
+			// Determine where the bar should be and interpolate its position between sections
 			if (scroll >= introOffset && scroll < skillsOffset) {
 				calcNavSlider(scroll, introOffset, skillsOffset, intro, skills);
 			}
@@ -51,36 +57,41 @@
 			navSlider.style.left = startElement.getBoundingClientRect().left * (1 - percent)
 								 + endElement.getBoundingClientRect().left * percent - offsetX + 'px';
 		}
-		
-		// Initialize offsets for click
-		updateNavSlider(); 
 
 		// Navbar scroll on click
 		$('#nav_logo').on('click', function() {
-			$("html, body").animate({ scrollTop: introOffset + 'px' });
+			scrollToPosition(introOffset);
 		});
 		$('#nav_skills').on('click', function() {
-			$("html, body").animate({ scrollTop: skillsOffset + 'px' });
+			scrollToPosition(skillsOffset);
 		});
 		$('#nav_lab').on('click', function() {
-			$("html, body").animate({ scrollTop: labOffset + 'px' });
+			scrollToPosition(labOffset);
 		});
 		$('#nav_photo').on('click', function() {
-			$("html, body").animate({ scrollTop: photoOffset + 'px' });
+			scrollToPosition(photoOffset);
 		});
 		$('#nav_contact').on('click', function() {
-			$("html, body").animate({ scrollTop: contactOffset + 'px' });
+			scrollToPosition(contactOffset);
 		});
+
+		/*
+		// Bind navbar to stop animating on user interrupt
+		$('html, body').bind('scroll mousedown DOMMouseScroll mousewheel keyup', function () {
+			$('html, body').stop();
+		});
+		*/
+
+		function scrollToPosition(offset) {
+			var delta = Math.abs($(document).scrollTop() - offset);
+			var duration = 300 + delta / 7; // Scale the duration depending on distance
+			$('html, body').stop().animate({ scrollTop: offset + 'px' }, duration);
+		}
 
 		// -----------------INTRO-----------------
 
 		var introCanvas = document.getElementById('intro_canvas');
 		var introCanvasTimeout = setTimeout(updateIntroPattern, 0);
-
-		window.onresize = function() {
-			//window.clearTimeout(introCanvasTimeout);
-			//introCanvasTimeout = setTimeout(updateIntroPattern, 1000);
-		}
 		
 		function updateIntroPattern() {
 			introCanvas.width = window.innerWidth;
@@ -95,5 +106,40 @@
 			});
 			pattern.canvas(introCanvas);
 		}
+
+		// -----------------SKILLS-----------------
+		var skillsToggled = false;
+
+		function updateSkills() {
+			var scroll = $(document).scrollTop();
+			var skills = $('#skills_bars ul');
+			
+			if (!skillsToggled && scroll >= skillsOffset - 200) {
+				for (var i = 0; i < skills[0].children.length; i++) {
+					var current = skills[0].children[i].children[0];
+					console.log(current);
+					pauseAndShow(current, i * 200);
+				}
+				skillsToggled = true;
+			}
+		}
+
+		function pauseAndShow(element, time) {
+			setTimeout(function() {
+				$(element).css({
+					'-webkit-transform': 'translateX(0%)',
+					'-moz-transform': 'translateX(0%)',
+					'-ms-transform': 'translateX(0%)',
+					'-o-transform': 'translateX(0%)',
+					'transform': 'translateX(0%)',
+				});
+			}, time);
+		}
+
+		// Initialize everything, making sure the dom is fully updated with queries
+		setTimeout(function() {
+			updateNavSlider(); 
+			updateSkills();
+		}, 50)
 	});
 }());

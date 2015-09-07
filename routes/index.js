@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var fs = require('fs');
+var data = require(path.join(__dirname, '../public/js/data.json'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	console.log(data);
 	var files = [{
 		id: 'testVertShader',
 		path: path.join(__dirname, '../shaders/testvert.vsh')
@@ -14,7 +16,7 @@ router.get('/', function(req, res, next) {
 		path: path.join(__dirname, '../shaders/testfrag.fsh')
 	}];
 	getFiles(files, function(shaders) {
-		res.render('index', { shaders: shaders });
+		res.render('index', { shaders: shaders, data: data });
 	});
 });
 

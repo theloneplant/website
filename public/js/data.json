@@ -1,0 +1,74 @@
+{
+	"skills": [
+		{
+			"name": "C++",
+			"level": 100
+		},
+		{
+			"name": "Unity",
+			"level": 100
+		},
+		{
+			"name": "C#",
+			"level": 93
+		},
+		{
+			"name": "CSS",
+			"level": 87
+		},
+		{
+			"name": "Java",
+			"level": 82
+		},
+		{
+			"name": "JavaScript",
+			"level": 75
+		},
+		{
+			"name": "OpenGL",
+			"level": 50
+		},
+		{
+			"name": "Android",
+			"level": 40
+		}
+	],
+	"more": [
+		{
+			"name": "Oculus Rift",
+			"priority": 1
+		},
+		{
+			"name": "GitHub",
+			"priority": 1
+		},
+		{
+			"name": "Jira",
+			"priority": 1
+		},
+		{
+			"name": "Agile Development",
+			"priority": 1
+		},
+		{
+			"name": "GLSL",
+			"priority": 2
+		},
+		{
+			"name": "Terminal",
+			"priority": 2
+		},
+		{
+			"name": "three.js",
+			"priority": 2
+		},
+		{
+			"name": "Unreal Engine 4",
+			"priority": 2
+		},
+		{
+			"name": "Adobe Suite",
+			"priority": 3
+		}
+	]
+}

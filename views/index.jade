@@ -1,6 +1,10 @@
 html
 	head
 		title Michael LaPlante
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_32x32.png")
+		link(rel="icon" type="image/png" sizes="24x24" href="/assets/images/favicon_24x24.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon_16x16.png")
 		link(href="http://fonts.googleapis.com/css?family=Oxygen:300,700,400" rel="stylesheet" type="text/css")
 		link(rel="stylesheet" type="text/css" href="/css/style.css")
 		link(rel="stylesheet" type="text/css" href="/css/media.css")
@@ -18,7 +22,7 @@ html
 	body
 		#header_block
 		#header
-			#nav.content_wrapper.no_select
+			#nav.no_select
 				#nav_slider
 				#nav_logo ML
 				#nav_divider
@@ -29,18 +33,31 @@ html
 		#intro_wrapper
 			canvas#intro_canvas
 			#intro
-				h4#intro_message_1 My name is
+				h3#intro_message_1 My name is
 				h1#intro_message_2 Michael LaPlante
-				h4#intro_message_3 I am a front end software engineer from California and I love creating engaging interactive experiences
+				h3#intro_message_3 I am a front end software engineer from California and I love creating engaging interactive experiences
 		#skills_wrapper
+			#skills_bg_div
 			#skills
-				div Skills
+				h2 Skills
+				#skills_table
+					#skills_names
+						ul
+							each skill in data.skills
+								li
+									h4= skill.name
+					#skills_bars
+						ul
+							each bar in data.skills
+								li(style="width: " + bar.level + "%;")
+									.skills_bar
+				h2 More
 		#lab_wrapper
 			#lab
-				div Lab
+				p Lab
 		#photo_wrapper
 			#photo
-				div Photo
+				p Photo
 		#contact_wrapper
 			#contact
-				div Contact
+				p Contact
