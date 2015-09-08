@@ -71,19 +71,24 @@ html
 		#lab_wrapper
 			#lab
 				#lab_nav
-				#lab_nav_mobile
-				#lab_slider
 					each project in data.projects
-						.lab_project
-							.lab_image
-							.lab_info
-								h3=project.name
-								.lab_divider
-								.lab_tags
-									each tag in project.tags
-										.lab_tag=tag.name
-								p=project.desc
-								a(href=project.href).lab_link=project.linkDesc
+						.lab_nav_link
+							div=project.name
+				#lab_nav_mobile
+				#lab_mask
+					#lab_slider
+						each project in data.projects
+							.lab_project
+								.lab_image
+								.lab_info
+									h3=project.name
+									.lab_divider
+									.lab_tags
+										each tag in project.tags
+											.lab_tag=tag.name
+									p!=project.desc
+									.lab_link
+										a(href=project.href)=project.linkDesc
 
 		#photo_wrapper
 			#photo
