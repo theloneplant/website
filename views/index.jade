@@ -75,20 +75,23 @@ html
 						.lab_nav_link
 							div=project.name
 				#lab_nav_mobile
-				#lab_mask
-					#lab_slider
-						each project in data.projects
-							.lab_project
-								.lab_image
-								.lab_info
-									h3=project.name
-									.lab_divider
-									.lab_tags
-										each tag in project.tags
-											.lab_tag=tag.name
-									p!=project.desc
-									.lab_link
-										a(href=project.href)=project.linkDesc
+				#lab_projects
+					-for(var i = 0; i < data.projects.length; i++)
+						-var project = data.projects[i]
+						-var alpha = 0.0001
+						if i === 0
+							-alpha = 1
+						.lab_project(style='opacity: ' + alpha + ';')
+							.lab_image
+							.lab_info
+								h3=project.name
+								.lab_divider
+								.lab_tags
+									each tag in project.tags
+										.lab_tag=tag.name
+								p!=project.desc
+								.lab_link
+									a(href=project.href)=project.linkDesc
 
 		#photo_wrapper
 			#photo

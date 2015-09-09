@@ -149,7 +149,7 @@
 					'-moz-transform': 'translateX(0%)',
 					'-ms-transform': 'translateX(0%)',
 					'-o-transform': 'translateX(0%)',
-					'transform': 'translateX(0%)',
+					'transform': 'translateX(0%)'
 				});
 			}, time);
 		}
@@ -162,11 +162,79 @@
 			}, time);
 		}
 
+		// -----------------LAB-----------------
+		var projectList = $('#lab_nav')[0].children;
+		var currentIndex = 0;
+		var labProjects = $('#lab_projects')[0].children;
+		var duration = 500;
+		var animating = false;
+		var animateTimeout = setTimeout(function() {}, 0);;
+		$(projectList[currentIndex]).addClass('lab_nav_selected');
+
+
+		$('#lab_nav').children().each(function(index, element) {
+			$(element).click(function() {
+				if (currentIndex !== index && !animating) {
+					console.log('asdasd');
+					moveLabSlider(index);
+				}
+			});
+		});
+
+		function moveLabSlider(index) {
+			$(projectList[currentIndex]).removeClass('lab_nav_selected');
+			$(projectList[index]).addClass('lab_nav_selected');
+			var current = labProjects[currentIndex];
+			var target = labProjects[index];
+
+			updateLabSlider(index);
+			setTranslateX(target, 0);
+
+			$(current).css({
+				'opacity': '0.0001'
+			});
+			$(target).css({
+				'opacity': '1'
+			});
+
+			//animating = true;
+			clearTimeout(animateTimeout);
+			animateTimeout = setTimeout(function() {
+				animating = false;
+			}, duration);
+
+			currentIndex = index;
+		}
+
+		function updateLabSlider(targetIndex) {
+			for (var i = 0; i < labProjects.length; i++) {
+				if (i < targetIndex) {
+					// Move left
+					setTranslateX(labProjects[i], -20);
+				}
+				else if (i > targetIndex) {
+					// Move right
+					setTranslateX(labProjects[i], 20);
+				}
+			}
+		}
+
+		function setTranslateX(element, num) {
+			$(element).css({
+				'-webkit-transform': 'translateX(' + num + '%)',
+				'-moz-transform': 'translateX(' + num + '%)',
+				'-ms-transform': 'translateX(' + num + '%)',
+				'-o-transform': 'translateX(' + num + '%)',
+				'transform': 'translateX(' + num + '%)'
+			});
+		}
+
 		// Initialize everything, making sure the dom is fully updated with queries
 		setTimeout(function() {
 			updateNavHeight();
 			updateNavSlider(); 
 			updateSkills();
+			updateLabSlider(currentIndex);
 		}, 50)
 	});
 }());
