@@ -6,12 +6,14 @@
 		// -----------------GENERAL-----------------
 		document.onscroll = function() {
 			updateNavSlider();
+			updateIntroScroll();
 			updateSkills();
 		}
 
 		window.onresize = function() {
 			updateNavHeight();
 			updateNavSlider();
+			updateIntroResize();
 		}
 
 		// -----------------HEADER-----------------
@@ -94,7 +96,7 @@
 
 		function scrollToPosition(offset) {
 			var delta = Math.abs($(document).scrollTop() - offset);
-			var duration = 500 + delta / 6; // Scale the duration depending on distance
+			var duration = 400 + delta / 6; // Scale the duration depending on distance
 			$('html, body').stop().animate({ scrollTop: offset + 'px' }, duration);
 		}
 
@@ -117,28 +119,59 @@
 			pattern.canvas(introCanvas);
 		}
 
+		var introMoveHeight = 100;
+		var introClassAdded = false;
+
+		function updateIntroResize() {
+			introMoveLength = skillsOffset * 2 / 3;
+		}
+
+		function updateIntroScroll() {
+			var scroll = $(document).scrollTop();
+
+			if (scroll < skillsOffset) {
+				if (!introClassAdded && scroll > introMoveHeight) {
+					$('#intro').addClass('slide_up_hidden');
+					introClassAdded = true;
+				}
+				else if (introClassAdded && scroll <= introMoveHeight) {
+					$('#intro').removeClass('slide_up_hidden');	
+					introClassAdded = false;
+				}
+			}
+		}
+
 		// -----------------SKILLS-----------------
 		var skillsToggled = false;
+		var skillsMessageToggled = false;
 
 		function updateSkills() {
 			var scroll = $(document).scrollTop();
-			var skillsHeight = labOffset - skillsOffset;
-			var skills = $('#skills_bars ul');
-			var more = $('#skills_more ul');
-			
-			if (!skillsToggled && scroll >= skillsOffset - 250 
-				&& scroll <= skillsOffset + skillsHeight - 250) {
-				for (var i = 0; i < skills[0].children.length; i++) {
-					var current = skills[0].children[i].children[0];
-					timeoutSkillsBars(current, i * 100);
-				}
-				for (var i = 0; i < more[0].children.length; i++) {
-					var current = more[0].children[i].children[0];
-					console.log(current);
-					timeoutSkillsMore(current, i * 50 + skills[0].children.length * 100 + 400);
+
+			if (scroll < labOffset) {
+				var skillsHeight = labOffset - skillsOffset;
+				var skills = $('#skills_bars ul');
+				var more = $('#skills_more ul');
+				
+				if (!skillsToggled && scroll >= skillsOffset - 100 
+					&& scroll <= skillsOffset + skillsHeight - 100) {
+					for (var i = 0; i < skills[0].children.length; i++) {
+						var current = skills[0].children[i].children[0];
+						timeoutSkillsBars(current, i * 100);
+					}
+					for (var i = 0; i < more[0].children.length; i++) {
+						var current = more[0].children[i].children[0];
+						console.log(current);
+						timeoutSkillsMore(current, i * 50 + skills[0].children.length * 100 + 400);
+					}
+
+					skillsToggled = true;
 				}
 
-				skillsToggled = true;
+				if (!skillsMessageToggled && scroll >= skillsOffset - 400) {
+					$('#skills_wrapper .section_statement').removeClass('slide_down_hidden');
+					skillsMessageToggled = true;
+				}
 			}
 		}
 
@@ -147,7 +180,6 @@
 				$(element).css({
 					'-webkit-transform': 'translateX(0%)',
 					'-moz-transform': 'translateX(0%)',
-					'-ms-transform': 'translateX(0%)',
 					'-o-transform': 'translateX(0%)',
 					'transform': 'translateX(0%)'
 				});
@@ -191,10 +223,12 @@
 			setTranslateX(target, 0);
 
 			$(current).css({
-				'opacity': '0.0001'
+				'opacity': '0.0001',
+				'z-index': '2'
 			});
 			$(target).css({
-				'opacity': '1'
+				'opacity': '1',
+				'z-index': '3'
 			});
 
 			//animating = true;
@@ -202,7 +236,6 @@
 			animateTimeout = setTimeout(function() {
 				animating = false;
 			}, duration);
-
 			currentIndex = index;
 		}
 

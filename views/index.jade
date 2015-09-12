@@ -38,6 +38,7 @@ html
 				h3#intro_message_3 I am a front end software engineer from California and I love creating engaging interactive experiences
 		#skills_wrapper
 			#skills_bg_div
+			h3.section_statement.slide_down_hidden I currently study Computer Science at UCSD both in and outside of class, focusing on user interaction for web and games
 			#skills
 				h2 Skills
 				#skills_table
@@ -67,8 +68,8 @@ html
 						each skill in data.more
 							li
 								h5.skills_minor=skill.name
-
 		#lab_wrapper
+			h3.section_statement.slide_down_hidden Lorem ipsum dolor sit amet
 			#lab
 				#lab_nav
 					each project in data.projects
@@ -79,9 +80,11 @@ html
 					-for(var i = 0; i < data.projects.length; i++)
 						-var project = data.projects[i]
 						-var alpha = 0.0001
+						-var z = 2
 						if i === 0
 							-alpha = 1
-						.lab_project(style='opacity: ' + alpha + ';')
+							-z = 3
+						.lab_project(style='opacity: ' + alpha + '; z-index: ' + z + ';')
 							.lab_image
 							.lab_info
 								h3=project.name
