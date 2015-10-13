@@ -35,10 +35,10 @@ html
 			#intro
 				h3#intro_message_1 My name is
 				h1#intro_message_2 Michael LaPlante
-				h3#intro_message_3 I am a front end software engineer from California and I love creating engaging interactive experiences
+				h3#intro_message_3 I am a front end software engineer from California and I love creating engaging, interactive experiences
 		#skills_wrapper
 			#skills_bg_div
-			h3.section_statement.slide_down_hidden I currently study Computer Science at UCSD both in and outside of class, focusing on user interaction for web and games
+			h3.section_statement I currently study Computer Science at UCSD both in and outside of class, focusing on user interaction and graphics
 			#skills
 				h2 Skills
 				#skills_table
@@ -60,7 +60,7 @@ html
 														-tagString = project.name;
 													else
 														-tagString += ", " + project.name;
-										h5.skills_tags=tagString
+										h5.skills_tags.no_select=tagString
 
 				h2 More
 				#skills_more
@@ -69,13 +69,23 @@ html
 							li
 								h5.skills_minor=skill.name
 		#lab_wrapper
-			h3.section_statement.slide_down_hidden Lorem ipsum dolor sit amet
+			h3.section_statement Lorem Ipsum Dolor Sit Amet
+			//I love what I do, and try to learn as much as I can through practice and iteration
 			#lab
 				#lab_nav
 					each project in data.projects
 						.lab_nav_link
 							div=project.name
 				#lab_nav_mobile
+					#lab_nav_mobile_wrapper
+						#lab_left_arrow.no_select
+							#lab_left_arrow_inner
+						#lab_nav_mobile_links
+							each project in data.projects
+								.lab_nav_mobile_link.no_select
+									.lab_nav_mobile_link_inner
+						#lab_right_arrow.no_select
+							#lab_right_arrow_inner
 				#lab_projects
 					-for(var i = 0; i < data.projects.length; i++)
 						-var project = data.projects[i]
@@ -85,7 +95,7 @@ html
 							-alpha = 1
 							-z = 3
 						.lab_project(style='opacity: ' + alpha + '; z-index: ' + z + ';')
-							.lab_image
+							.lab_image(style='background-image: url(\'' + project.image + '\');')
 							.lab_info
 								h3=project.name
 								.lab_divider
@@ -95,10 +105,19 @@ html
 								p!=project.desc
 								.lab_link
 									a(href=project.href)=project.linkDesc
-
+		
 		#photo_wrapper
-			#photo
+			h2.section_statement Photography section coming soon!
+			//And when I'm not coding I love to travel, photograph landscapes, and participate in various nerdy activities
+			//#photo
 				p Photo
 		#contact_wrapper
 			#contact
-				p Contact
+				#contact_inner
+					h2#contact_title.contact_style Get in touch
+					.contact_divider
+					h3#contact_phone.contact_style 760 707 7717
+					a(href="mailto:me@michael-laplante.com")
+						h3#contact_email.contact_style me@michael-laplante.com
+					a(href="https://www.linkedin.com/pub/michael-laplante/8a/294/492")
+						h3#contact_linkedin.contact_style LinkedIn

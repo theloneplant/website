@@ -5,19 +5,19 @@
 			"level": 100
 		},
 		{
-			"name": "Unity",
+			"name": "Java",
 			"level": 100
 		},
 		{
-			"name": "C#",
+			"name": "Unity",
 			"level": 93
 		},
 		{
-			"name": "CSS",
+			"name": "C#",
 			"level": 87
 		},
 		{
-			"name": "Java",
+			"name": "CSS",
 			"level": 82
 		},
 		{
@@ -69,7 +69,7 @@
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -86,12 +86,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -108,12 +108,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -130,12 +130,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -152,12 +152,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -174,12 +174,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -196,12 +196,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -218,12 +218,12 @@
 			]
 		},
 		{
-			"name": "Generic Derp",
+			"name": "Lorem Ipsum",
 			"year": "2013",
 			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../public/assets/images/gq.jpg",
+			"image": "../assets/images/gq.jpg",
 			"tags": [
 				{
 					"name": "C++"
@@ -242,7 +242,7 @@
 	],
 	"photos": [
 		{
-			"href": "../public/assets/images/photos"
+			"href": "../assets/images/photos"
 		}
 	]
 }

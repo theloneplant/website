@@ -4,6 +4,14 @@
 		// var background = new Background3D('main_background');
 
 		// -----------------GENERAL-----------------
+		var navSlider = document.getElementById('nav_slider');
+		var intro = document.getElementById('nav_logo');
+		var skills = document.getElementById('nav_skills');
+		var lab = document.getElementById('nav_lab');
+		var photo = document.getElementById('nav_photo');
+		var contact = document.getElementById('nav_contact');
+		var offsetX, introOffset, skillsOffset, labOffset, photoOffset, contactOffset;
+
 		document.onscroll = function() {
 			updateNavSlider();
 			updateIntroScroll();
@@ -13,18 +21,11 @@
 		window.onresize = function() {
 			updateNavHeight();
 			updateNavSlider();
-			updateIntroResize();
+			resizeLabHeight(0, window.innerWidth <= 1000);
 		}
 
 		// -----------------HEADER-----------------
 		var navHeight = 70;
-		var navSlider = document.getElementById('nav_slider');
-		var intro = document.getElementById('nav_logo');
-		var skills = document.getElementById('nav_skills');
-		var lab = document.getElementById('nav_lab');
-		var photo = document.getElementById('nav_photo');
-		var contact = document.getElementById('nav_contact');
-		var offsetX, introOffset, skillsOffset, labOffset, photoOffset, contactOffset;
 
 		function updateNavHeight() {
 			if (window.innerWidth <= 450) {
@@ -51,7 +52,7 @@
 			else if (scroll >= skillsOffset && scroll < labOffset) {
 				calcNavSlider(scroll, skillsOffset, labOffset, skills, lab);
 			}
-			else if (scroll >= labOffset && scroll < photoOffset) {
+			else if (scroll >= labOffset && scroll < photoOffset) { // Change this back when 
 				calcNavSlider(scroll, labOffset, photoOffset, lab, photo);
 			}
 			else if (scroll >= photoOffset && scroll <= contactOffset) {
@@ -96,7 +97,7 @@
 
 		function scrollToPosition(offset) {
 			var delta = Math.abs($(document).scrollTop() - offset);
-			var duration = 400 + delta / 6; // Scale the duration depending on distance
+			var duration = 500 + delta / 6; // Scale the duration depending on distance
 			$('html, body').stop().animate({ scrollTop: offset + 'px' }, duration);
 		}
 
@@ -119,22 +120,18 @@
 			pattern.canvas(introCanvas);
 		}
 
-		var introMoveHeight = 100;
 		var introClassAdded = false;
-
-		function updateIntroResize() {
-			introMoveLength = skillsOffset * 2 / 3;
-		}
+		updateIntroScroll();
 
 		function updateIntroScroll() {
 			var scroll = $(document).scrollTop();
 
 			if (scroll < skillsOffset) {
-				if (!introClassAdded && scroll > introMoveHeight) {
+				if (!introClassAdded && scroll > skillsOffset * 0.6) {
 					$('#intro').addClass('slide_up_hidden');
 					introClassAdded = true;
 				}
-				else if (introClassAdded && scroll <= introMoveHeight) {
+				else if (introClassAdded && scroll <= skillsOffset * 0.6) {
 					$('#intro').removeClass('slide_up_hidden');	
 					introClassAdded = false;
 				}
@@ -143,7 +140,6 @@
 
 		// -----------------SKILLS-----------------
 		var skillsToggled = false;
-		var skillsMessageToggled = false;
 
 		function updateSkills() {
 			var scroll = $(document).scrollTop();
@@ -167,11 +163,6 @@
 
 					skillsToggled = true;
 				}
-
-				if (!skillsMessageToggled && scroll >= skillsOffset - 400) {
-					$('#skills_wrapper .section_statement').removeClass('slide_down_hidden');
-					skillsMessageToggled = true;
-				}
 			}
 		}
 
@@ -194,28 +185,58 @@
 			}, time);
 		}
 
+		$('.skills_tags').blur(function() {
+			$('input').removeClass('focus');
+		})
+		.focus(function() {
+			$(this).addClass('focus')
+		});
+
+		$('.skills_tags').click(function(event) {
+			event.target.focus(); // Focus for iOS
+		});
+
 		// -----------------LAB-----------------
 		var projectList = $('#lab_nav')[0].children;
+		var projectListMobile = $('#lab_nav_mobile_links')[0].children;
 		var currentIndex = 0;
 		var labProjects = $('#lab_projects')[0].children;
-		var duration = 500;
-		var animating = false;
 		var animateTimeout = setTimeout(function() {}, 0);;
 		$(projectList[currentIndex]).addClass('lab_nav_selected');
 
-
 		$('#lab_nav').children().each(function(index, element) {
 			$(element).click(function() {
-				if (currentIndex !== index && !animating) {
-					console.log('asdasd');
-					moveLabSlider(index);
+				if (currentIndex !== index) {
+					moveLabSlider(index, false);
 				}
 			});
 		});
 
-		function moveLabSlider(index) {
-			$(projectList[currentIndex]).removeClass('lab_nav_selected');
-			$(projectList[index]).addClass('lab_nav_selected');
+		$('#lab_nav_mobile_links').children().each(function(index, element) {
+			$(element).click(function() {
+				if (currentIndex !== index) {
+					moveLabSlider(index, true);
+				}
+			});
+		});
+
+		$('#lab_left_arrow').click(function() {
+			if (currentIndex == 0)
+				moveLabSlider(7, true);
+			else
+				moveLabSlider(currentIndex - 1, true);
+		});
+
+		$('#lab_right_arrow').click(function() {
+			if (currentIndex == 7)
+				moveLabSlider(0, true);
+			else
+				moveLabSlider(currentIndex + 1, true);
+		});
+
+		function moveLabSlider(index, isMobile) {
+			updateLabNav(index);
+			resizeLabHeight(index, isMobile);
 			var current = labProjects[currentIndex];
 			var target = labProjects[index];
 
@@ -230,13 +251,15 @@
 				'opacity': '1',
 				'z-index': '3'
 			});
-
-			//animating = true;
-			clearTimeout(animateTimeout);
-			animateTimeout = setTimeout(function() {
-				animating = false;
-			}, duration);
 			currentIndex = index;
+		}
+
+		function updateLabNav(index) {
+			$(projectList[currentIndex]).removeClass('lab_nav_selected');
+			$(projectList[index]).addClass('lab_nav_selected');
+
+			$(projectListMobile[currentIndex].firstChild).removeClass('lab_nav_selected');
+			$(projectListMobile[index].firstChild).addClass('lab_nav_selected');
 		}
 
 		function updateLabSlider(targetIndex) {
@@ -249,6 +272,16 @@
 					// Move right
 					setTranslateX(labProjects[i], 20);
 				}
+			}
+		}
+
+		function resizeLabHeight(index, isMobile) {
+			if (isMobile) {
+				var height = $(labProjects[index]).children().eq(0).height() + $(labProjects[index]).children().eq(1).height();
+				$('#lab_projects').height(height);
+			}
+			else {
+				$('#lab_projects').height(630);
 			}
 		}
 
@@ -265,9 +298,10 @@
 		// Initialize everything, making sure the dom is fully updated with queries
 		setTimeout(function() {
 			updateNavHeight();
-			updateNavSlider(); 
+			updateNavSlider();
 			updateSkills();
 			updateLabSlider(currentIndex);
+			moveLabSlider(0, window.innerWidth < 1000);
 		}, 50)
 	});
 }());
