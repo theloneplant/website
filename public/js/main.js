@@ -8,9 +8,9 @@
 		var intro = document.getElementById('nav_logo');
 		var skills = document.getElementById('nav_skills');
 		var lab = document.getElementById('nav_lab');
-		var photo = document.getElementById('nav_photo');
+		var hobby = document.getElementById('nav_hobby');
 		var contact = document.getElementById('nav_contact');
-		var offsetX, introOffset, skillsOffset, labOffset, photoOffset, contactOffset;
+		var offsetX, introOffset, skillsOffset, labOffset, hobbyOffset, contactOffset;
 
 		document.onscroll = function() {
 			updateNavSlider();
@@ -42,7 +42,7 @@
 			introOffset = 0;
 			skillsOffset = $('#skills_wrapper').offset().top - navHeight;
 			labOffset = $('#lab_wrapper').offset().top - navHeight;
-			photoOffset = $('#photo_wrapper').offset().top - navHeight;
+			hobbyOffset = $('#hobby_wrapper').offset().top - navHeight;
 			contactOffset = Math.min($('#contact_wrapper').offset().top - navHeight, $(document).height() - window.innerHeight);
 
 			// Determine where the bar should be and interpolate its position between sections
@@ -52,11 +52,11 @@
 			else if (scroll >= skillsOffset && scroll < labOffset) {
 				calcNavSlider(scroll, skillsOffset, labOffset, skills, lab);
 			}
-			else if (scroll >= labOffset && scroll < photoOffset) { // Change this back when 
-				calcNavSlider(scroll, labOffset, photoOffset, lab, photo);
+			else if (scroll >= labOffset && scroll < hobbyOffset) { // Change this back when 
+				calcNavSlider(scroll, labOffset, hobbyOffset, lab, hobby);
 			}
-			else if (scroll >= photoOffset && scroll <= contactOffset) {
-				calcNavSlider(scroll, photoOffset, contactOffset, photo, contact);
+			else if (scroll >= hobbyOffset && scroll <= contactOffset) {
+				calcNavSlider(scroll, hobbyOffset, contactOffset, hobby, contact);
 			}
 			else if (scroll > contactOffset) {
 				navSlider.style.width = contact.clientWidth + 'px';
@@ -81,8 +81,8 @@
 		$('#nav_lab').on('click', function() {
 			scrollToPosition(labOffset);
 		});
-		$('#nav_photo').on('click', function() {
-			scrollToPosition(photoOffset);
+		$('#nav_hobby').on('click', function() {
+			scrollToPosition(hobbyOffset);
 		});
 		$('#nav_contact').on('click', function() {
 			scrollToPosition(contactOffset);

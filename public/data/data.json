@@ -26,10 +26,14 @@
 		},
 		{
 			"name": "OpenGL",
-			"level": 50
+			"level": 65
 		},
 		{
 			"name": "Android",
+			"level": 45
+		},
+		{
+			"name": "Python",
 			"level": 40
 		}
 	],
@@ -53,6 +57,9 @@
 			"name": "Terminal"
 		},
 		{
+			"name": "SQL"
+		},
+		{
 			"name": "three.js"
 		},
 		{
@@ -64,9 +71,43 @@
 	],
 	"projects": [
 		{
+			"name": "CSE 167 Fist Bump",
+			"year": "2015",
+			"desc": "This space sim was created as a final project for an intro to computer graphics class. It was created in 3 weeks from scratch using C++ and OpenGL with a team of 3 members. More info is on our blog linked below.<br><br>My Features:<br>Cross device input API<br>GPU accelerated particles<br>Boid swarms and object avoidance<br>3D sound<br>Collision detection<br>Flight system and gameplay",
+			"linkDesc": "View Project",
+			"href": "https://sites.google.com/site/cse167fistbump/home",
+			"image": "../assets/images/fistbump.jpg",
+			"tags": [
+				{
+					"name": "C++"
+				},
+				{
+					"name": "OpenGL"
+				},
+				{
+					"name": "GPU Particles"
+				},
+				{
+					"name": "Boids"
+				},
+				{
+					"name": "Controller/Joystick Support"
+				},
+				{
+					"name": "3D Sound"
+				},
+				{
+					"name": "Flight System"
+				},
+				{
+					"name": "Collision Detection"
+				}
+			]
+		},
+		{
 			"name": "Generic Quest",
 			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
+			"desc": "Generic Quest is a text based adventure created for an intro to C++ final project using command prompt for Windows. The game has a full character creation system and a small demo story with branching paths depending on your choices.<br><br>Feature List:<br>Efficient canvas system with color support<br>Frame system to manage text images and windows<br>Custom file format for animations and text images<br>Motion tweening system<br>Stat and inventory system for the character and enemies<br>Full combat system complete with loot!",
 			"linkDesc": "View Project on GitHub",
 			"href": "https://github.com/theloneplant/GenericQuest",
 			"image": "../assets/images/gq.jpg",
@@ -86,156 +127,37 @@
 			]
 		},
 		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
+			"name": "GameRev",
+			"year": "2015",
+			"desc": "This was a final project for a UI/UX class at UCSD. I created a database using Parse and a back end with Node. The front end uses JavaScript, CSS, and Handlebars. Bootstrap was also lightly used. <br><br>The website allows users to create accounts and reviews as well as viewing other people's reviews and overall ratings of a certain game. If you don't want to make an account, try using the following info:<br><br>Username: g<br>Password: g",
+			"linkDesc": "View Project",
+			"href": "http://gamerev.herokuapp.com/",
+			"image": "../assets/images/gamerev.jpg",
 			"tags": [
 				{
-					"name": "C++"
+					"name": "JavaScript"
 				},
 				{
-					"name": "C#"
+					"name": "CSS"
 				},
 				{
-					"name": "Animation"
+					"name": "Node"
 				},
 				{
-					"name": "Stats"
+					"name": "Handlebars"
 				}
 			]
 		},
 		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
+			"name": "More is on the way!",
+			"year": "2015",
+			"desc": "As I find time I'll be adding more of my projects to this site!",
+			"linkDesc": "View Project",
+			"href": "",
+			"image": "",
 			"tags": [
 				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
-				}
-			]
-		},
-		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
-			"tags": [
-				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
-				}
-			]
-		},
-		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
-			"tags": [
-				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
-				}
-			]
-		},
-		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
-			"tags": [
-				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
-				}
-			]
-		},
-		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
-			"tags": [
-				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
-				}
-			]
-		},
-		{
-			"name": "Lorem Ipsum",
-			"year": "2013",
-			"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus eleifend sem, id cursus sapien. Aenean condimentum id felis ac varius. Sed pulvinar elementum dui eget maximus. Proin molestie ut tellus eu pellentesque. <br><br>Etiam gravida nec augue at faucibus. Nunc quis lectus quam. Praesent condimentum feugiat nibh. Integer justo nisl, laoreet et mauris vitae, placerat accumsan urna.",
-			"linkDesc": "View Project on GitHub",
-			"href": "https://github.com/theloneplant/GenericQuest",
-			"image": "../assets/images/gq.jpg",
-			"tags": [
-				{
-					"name": "C++"
-				},
-				{
-					"name": "C#"
-				},
-				{
-					"name": "Animation"
-				},
-				{
-					"name": "Stats"
+					"name": "Coming Soon"
 				}
 			]
 		}
