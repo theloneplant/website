@@ -46,13 +46,14 @@
 			contactOffset = Math.min($('#contact_wrapper').offset().top - navHeight, $(document).height() - window.innerHeight);
 
 			// Determine where the bar should be and interpolate its position between sections
+			// Should eventually be changed to use an array instead of if/else statements all over the place
 			if (scroll >= introOffset && scroll < skillsOffset) {
 				calcNavSlider(scroll, introOffset, skillsOffset, intro, skills);
 			}
 			else if (scroll >= skillsOffset && scroll < labOffset) {
 				calcNavSlider(scroll, skillsOffset, labOffset, skills, lab);
 			}
-			else if (scroll >= labOffset && scroll < hobbyOffset) { // Change this back when 
+			else if (scroll >= labOffset && scroll < hobbyOffset) {
 				calcNavSlider(scroll, labOffset, hobbyOffset, lab, hobby);
 			}
 			else if (scroll >= hobbyOffset && scroll <= contactOffset) {
@@ -102,7 +103,6 @@
 		}
 
 		// -----------------INTRO-----------------
-
 		var introCanvas = document.getElementById('intro_canvas');
 		var introCanvasTimeout = setTimeout(updateIntroPattern, 0);
 		
@@ -201,7 +201,7 @@
 		var projectListMobile = $('#lab_nav_mobile_links')[0].children;
 		var currentIndex = 0;
 		var labProjects = $('#lab_projects')[0].children;
-		var animateTimeout = setTimeout(function() {}, 0);;
+		var animateTimeout = setTimeout(function() {}, 0);
 		$(projectList[currentIndex]).addClass('lab_nav_selected');
 
 		$('#lab_nav').children().each(function(index, element) {
@@ -222,13 +222,13 @@
 
 		$('#lab_left_arrow').click(function() {
 			if (currentIndex == 0)
-				moveLabSlider(7, true);
+				moveLabSlider(projectList.length - 1, true);
 			else
 				moveLabSlider(currentIndex - 1, true);
 		});
 
 		$('#lab_right_arrow').click(function() {
-			if (currentIndex == 7)
+			if (currentIndex == projectList.length - 1)
 				moveLabSlider(0, true);
 			else
 				moveLabSlider(currentIndex + 1, true);
@@ -257,7 +257,7 @@
 		function updateLabNav(index) {
 			$(projectList[currentIndex]).removeClass('lab_nav_selected');
 			$(projectList[index]).addClass('lab_nav_selected');
-
+			
 			$(projectListMobile[currentIndex].firstChild).removeClass('lab_nav_selected');
 			$(projectListMobile[index].firstChild).addClass('lab_nav_selected');
 		}

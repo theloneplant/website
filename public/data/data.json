@@ -5,39 +5,42 @@
 			"level": 100
 		},
 		{
-			"name": "Java",
-			"level": 100
-		},
-		{
 			"name": "Unity",
 			"level": 93
 		},
 		{
 			"name": "C#",
-			"level": 87
+			"level": 90
 		},
 		{
 			"name": "CSS",
-			"level": 82
+			"level": 86
 		},
 		{
 			"name": "JavaScript",
-			"level": 75
+			"level": 80
 		},
 		{
 			"name": "OpenGL",
-			"level": 65
+			"level": 70
 		},
 		{
-			"name": "Android",
-			"level": 45
+			"name": "Java",
+			"level": 60
 		},
 		{
 			"name": "Python",
-			"level": 40
+			"level": 45
+		},
+		{
+			"name": "Android",
+			"level": 35
 		}
 	],
 	"more": [
+		{
+			"name": "Node.js"
+		},
 		{
 			"name": "Oculus Rift"
 		},
@@ -60,10 +63,19 @@
 			"name": "SQL"
 		},
 		{
+			"name": "Bash"
+		},
+		{
 			"name": "three.js"
 		},
 		{
+			"name": "Docker"
+		},
+		{
 			"name": "Unreal Engine 4"
+		},
+		{
+			"name": "Blender"
 		},
 		{
 			"name": "Adobe Suite"
@@ -105,10 +117,35 @@
 			]
 		},
 		{
+			"name": "General Chat",
+			"year": "2014",
+			"desc": "General Chat is a chat system made for a programming competition in 2 weeks. The chat program is based on a client/server model using TCP and utilizes multithreading on the server. Each thread on the server represents a client and waits for the client to respond, putting their message into a queue to send out to everyone else. The threads sleep while nothing is being sent to preserve CPU and are closed gracefully when there is a disconnect. The program is completely cross-platform, working on Windows and Unix operating systems.",
+			"linkDesc": "View Project",
+			"href": "https://github.com/theloneplant/GeneralChat",
+			"image": "../assets/images/gc.jpg",
+			"tags": [
+				{
+					"name": "C++"
+				},
+				{
+					"name": "Visual Studio"
+				},
+				{
+					"name": "Cross-Platform"
+				},
+				{
+					"name": "Multithreading"
+				},
+				{
+					"name": "Networking"
+				}
+			]
+		},
+		{
 			"name": "Generic Quest",
 			"year": "2013",
 			"desc": "Generic Quest is a text based adventure created for an intro to C++ final project using command prompt for Windows. The game has a full character creation system and a small demo story with branching paths depending on your choices.<br><br>Feature List:<br>Efficient canvas system with color support<br>Frame system to manage text images and windows<br>Custom file format for animations and text images<br>Motion tweening system<br>Stat and inventory system for the character and enemies<br>Full combat system complete with loot!",
-			"linkDesc": "View Project on GitHub",
+			"linkDesc": "View Project",
 			"href": "https://github.com/theloneplant/GenericQuest",
 			"image": "../assets/images/gq.jpg",
 			"tags": [
@@ -130,7 +167,7 @@
 			"name": "GameRev",
 			"year": "2015",
 			"desc": "This was a final project for a UI/UX class at UCSD. I created a database using Parse and a back end with Node. The front end uses JavaScript, CSS, and Handlebars. Bootstrap was also lightly used. <br><br>The website allows users to create accounts and reviews as well as viewing other people's reviews and overall ratings of a certain game. If you don't want to make an account, try using the following info:<br><br>Username: g<br>Password: g",
-			"linkDesc": "View Project",
+			"linkDesc": "View Website",
 			"href": "http://gamerev.herokuapp.com/",
 			"image": "../assets/images/gamerev.jpg",
 			"tags": [
@@ -149,15 +186,90 @@
 			]
 		},
 		{
-			"name": "More is on the way!",
+			"name": "This Website",
 			"year": "2015",
-			"desc": "As I find time I'll be adding more of my projects to this site!",
-			"linkDesc": "View Project",
-			"href": "",
-			"image": "",
+			"desc": "This website is designed and created from scratch using JavaScript, HTML, CSS, Node, and Jade. The site runs on an AWS instance and the site is built from a JSON file so I'm able to easily edit data.<br><br>The site is designed to be fully responsive, fast, and viewable on any major browser.",
+			"linkDesc": "View Website",
+			"href": "https://github.com/theloneplant/website",
+			"image": "../assets/images/site.jpg",
 			"tags": [
 				{
-					"name": "Coming Soon"
+					"name": "JavaScript"
+				},
+				{
+					"name": "CSS"
+				},
+				{
+					"name": "Node"
+				},
+				{
+					"name": "Jade"
+				}
+			]
+		},
+		{
+			"name": "VGDC",
+			"year": "2015",
+			"desc": "I am an officer for UCSD's Video Game Development Club, which is centered around teamwork and learning. We host several events per quarter and facilitate group projects during meetings. I help host these events and was one of the key members that brought the club back to life after it lost organization prior to 2014.<br><br>I play several important roles in the club including mentoring teams, public speaking, and updating the club's website. ",
+			"linkDesc": "View Website",
+			"href": "http://gamedev.ucsd.edu/",
+			"image": "../assets/images/vgdc.jpg",
+			"tags": [
+				{
+					"name": "C#"
+				},
+				{
+					"name": "Unity"
+				},
+				{
+					"name": "PHP"
+				},
+				{
+					"name": "WordPress"
+				},
+				{
+					"name": "Leadership"
+				}
+			]
+		},
+		{
+			"name": "Prizmiq Internship",
+			"year": "2015",
+			"desc": "Over the summer of 2015, I was tasked with making a VR demo to show off Prizmiq's scanning potential in an immersive 3D environment. The demo has the user sitting in a house with a ring of shoes around them. They’re able to rotate the shoes around them, and when they stare at a shoe, it enlarges and reveals extra information. At the end, they can view a scoreboard of their favorite shoes tracked by my analytics system. <br><br>To make the demo, I created an architecture for an animation engine and event system using a state machine, which allowed me to fade in information for the user. The analytics system tracks different kinds of interaction such as a stare or glance which is used to rank shoes by interest.",
+			"linkDesc": "",
+			"href": "http://prizmiq.com/",
+			"image": "../assets/images/prizmiq.jpg",
+			"tags": [
+				{
+					"name": "Unity"
+				},
+				{
+					"name": "C#"
+				},
+				{
+					"name": "Oculus Rift"
+				}
+			]
+		},
+		{
+			"name": "Illumina Internship",
+			"year": "2014",
+			"desc": "Over the summer of 2014, I was tasked with automating test cases for the BaseSpace developer portal. I created various test cases plus a test that runs through the entire application creation workflow, from logging in to running the app. Test cases were split into functions for reuse to make sure code stayed easy to read. I worked in a large team and attended daily scrums. We used Jira and Confluence to do agile development and GitHub for source control.<br><br>Test cases were made using C# and Telerik Test Studio. I also used SQL for database queries and Docker to create application instances for tests.",
+			"linkDesc": "",
+			"href": "http://www.illumina.com/",
+			"image": "../assets/images/illumina.jpg",
+			"tags": [
+				{
+					"name": "C#"
+				},
+				{
+					"name": "SQL"
+				},
+				{
+					"name": "Docker"
+				},
+				{
+					"name": "Bash"
 				}
 			]
 		}

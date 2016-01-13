@@ -27,7 +27,7 @@ html
 				#nav_logo ML
 				#nav_divider
 				#nav_skills.nav_link Skills
-				#nav_lab.nav_link Lab
+				#nav_lab.nav_link Work
 				#nav_hobby.nav_link Hobby
 				#nav_contact.nav_link Contact
 		#intro_wrapper
@@ -38,7 +38,7 @@ html
 				h3#intro_message_3 I am a software engineer from California and I love creating engaging, interactive experiences
 		#skills_wrapper
 			#skills_bg_div
-			h3.section_statement I currently study Computer Science at UCSD both in and outside of class, focusing mostly on front-end development
+			h3.section_statement I currently study Computer Science at UCSD both in and outside of class, participating in clubs and working on personal projects
 			#skills
 				h2 Skills
 				#skills_table
@@ -70,7 +70,6 @@ html
 								h5.skills_minor=skill.name
 		#lab_wrapper
 			h3.section_statement Every now and again I'll make a side project to help me learn and have some fun
-			//I love what I do, and try to learn as much as I can through practice and iteration
 			#lab
 				#lab_nav
 					each project in data.projects
@@ -103,8 +102,9 @@ html
 									each tag in project.tags
 										.lab_tag=tag.name
 								p!=project.desc
-								.lab_link
-									a(href=project.href)=project.linkDesc
+								if project.linkDesc.length > 0
+									.lab_link
+										a(href=project.href)=project.linkDesc
 		
 		#hobby_wrapper
 			h2.section_statement Hobby section coming soon!
